@@ -1,9 +1,14 @@
 import React from 'react';
-
-const TShirt = () => {
+import './TShirt.css';
+const TShirt = ({handleAddToCart, tShirt}) => {
+    
+    const {name, picture, price} = tShirt;
     return (
-        <div>
-            
+        <div className='t-shirt'>
+            <img src={picture} alt="" />
+            <h4>{name}</h4>
+            <p>Price: ${price}</p>
+            <button onClick={() => handleAddToCart(tShirt)}>Add to Cart</button>
         </div>
     );
 };
